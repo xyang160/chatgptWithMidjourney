@@ -5,7 +5,6 @@ import { ACCESS_CODE_PREFIX } from "../constant";
 
 const serverConfig = getServerSideConfig();
 
-
 function getIP(req: NextRequest) {
   let ip = req.ip ?? req.headers.get("x-real-ip");
   const forwardedFor = req.headers.get("x-forwarded-for");
@@ -86,7 +85,7 @@ export function authMj(req: NextRequest) {
   } else {
     return {
       error: true,
-      msg: "Empty Midjourney Api Key. Go to: [MidjourneyAPI](https://midjourneyapi.zxx.im/)",
+      msg: '访问密码不正确或为空，关注公众号"智能语友"获取密码。',
     };
   }
 
